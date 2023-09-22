@@ -22,7 +22,7 @@ const Header = () => {
               <NavLink
                 to="/"
                 className={({ isActive, isPending }) =>
-                  isActive && "!text-[#00b5cc]"
+                  isActive ? "!text-[#00b5cc]" : "text-white"
                 }
               >
                 Home
@@ -32,7 +32,7 @@ const Header = () => {
               <NavLink
                 to="/characters"
                 className={({ isActive, isPending }) =>
-                  isActive && "!text-[#00b5cc]"
+                  isActive ? "!text-[#00b5cc]" : "text-white"
                 }
               >
                 characters
@@ -42,7 +42,7 @@ const Header = () => {
               <NavLink
                 to="/locations"
                 className={({ isActive, isPending }) =>
-                  isActive && "!text-[#00b5cc]"
+                  isActive ? "!text-[#00b5cc]" : "text-white"
                 }
               >
                 locations
@@ -52,7 +52,7 @@ const Header = () => {
               <NavLink
                 to="/episodes"
                 className={({ isActive, isPending }) =>
-                  isActive && "!text-[#00b5cc]"
+                  isActive ? "!text-[#00b5cc]" : "text-white"
                 }
               >
                 episodes
