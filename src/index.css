@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shadow-logo {
+  animation: animate-logo 0.8s infinite alternate;
+}
+
+.shadow-logo:hover {
+  animation: none;
+  filter: drop-shadow(0px 0px 10px #b2df28);
+}
+
+@keyframes animate-logo {
+  0% {
+    filter: drop-shadow(0px 0px 0px #b1df281a);
+  }
+  100% {
+    filter: drop-shadow(0px 0px 5px #b2df28);
+  }
+}
