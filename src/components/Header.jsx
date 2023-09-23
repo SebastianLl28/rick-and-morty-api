@@ -21,7 +21,7 @@ const Header = () => {
             <li>
               <NavLink
                 to="/"
-                className={({ isActive, isPending }) =>
+                className={({ isActive }) =>
                   isActive ? "!text-[#00b5cc]" : "text-white"
                 }
               >
@@ -31,7 +31,7 @@ const Header = () => {
             <li>
               <NavLink
                 to="/characters"
-                className={({ isActive, isPending }) =>
+                className={({ isActive }) =>
                   isActive ? "!text-[#00b5cc]" : "text-white"
                 }
               >
@@ -41,7 +41,7 @@ const Header = () => {
             <li>
               <NavLink
                 to="/locations"
-                className={({ isActive, isPending }) =>
+                className={({ isActive }) =>
                   isActive ? "!text-[#00b5cc]" : "text-white"
                 }
               >
@@ -51,7 +51,7 @@ const Header = () => {
             <li>
               <NavLink
                 to="/episodes"
-                className={({ isActive, isPending }) =>
+                className={({ isActive }) =>
                   isActive ? "!text-[#00b5cc]" : "text-white"
                 }
               >
