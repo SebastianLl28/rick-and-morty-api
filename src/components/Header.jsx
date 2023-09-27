@@ -2,13 +2,21 @@ import { NavLink } from "react-router-dom";
 import Toggle from "./Toggle";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Header = () => {
-  const [isActive, setIsActive] = useState(true);
+  const [isActive, setIsActive] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsActive(false);
+  }, [location]);
 
   return (
     <header
-      className={`w-full dark:bg-gray-900   ${
+      className={`w-full dark:bg-gray-900 z-10  ${
         isActive ? "h-screen fixed top-0" : "relative"
       }`}
     >
