@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getCharacters } from "../../api/characterAPI";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
 import Body from "./components/Body";
