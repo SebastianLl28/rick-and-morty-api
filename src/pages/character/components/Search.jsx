@@ -1,19 +1,22 @@
-import React from "react";
 import { useEffect } from "react";
+import { useContext, useState } from "react";
 import { FilterContext } from "../../../context/filterContext";
-import { useContext } from "react";
 
 const Search = () => {
   const { initialState, setInitialState } = useContext(FilterContext);
+  const [text, setText] = useState(initialState.name);
 
   const handleOnChange = (e) => {
-    setInitialState({ ...initialState, name: e.target.value });
+    setText(e.target.value);
   };
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => console.log(initialState.name), 1800);
+    const timeoutId = setTimeout(
+      () => setInitialState({ ...initialState, name: text }),
+      1200
+    );
     return () => clearTimeout(timeoutId);
-  }, [initialState.name]);
+  }, [text]);
 
   return (
     <div className="pb-7">
@@ -24,7 +27,6 @@ const Search = () => {
         className="w-full px-3 py-2 rounded text-gray-900"
         placeholder="Search your character favorite"
         onChange={handleOnChange}
-        value={initialState.name}
       />
     </div>
   );
