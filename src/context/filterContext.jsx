@@ -15,7 +15,7 @@ const UseFilter = ({ children }) => {
   });
 
   return (
-    <FilterContext.Provider value={{ initialState }}>
+    <FilterContext.Provider value={{ initialState, setInitialState }}>
       {children}
     </FilterContext.Provider>
   );

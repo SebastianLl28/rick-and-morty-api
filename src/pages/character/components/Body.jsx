@@ -2,10 +2,15 @@ import { useContext } from "react";
 import Card from "./Card";
 import { useCharacters } from "../../../hooks/useCharacters";
 import { FilterContext } from "../../../context/filterContext";
+import { useEffect } from "react";
 
 const Body = () => {
   const { initialState } = useContext(FilterContext);
-  const { data, isLoading, isError } = useCharacters(initialState);
+  const { data, isLoading, isError, refetch, isFetching } =
+    useCharacters(initialState);
+  useEffect(() => {
+    refetch();
+  }, [initialState]);
   return (
     <div className="w-full grid grid-cols-4 gap-10">
       {!isLoading &&
@@ -21,6 +26,8 @@ const Body = () => {
             especies={element.species}
           />
         ))}
+      {isLoading && isFetching && <p>Esta cargando</p>}
+      {!isLoading && isError && <p>No se encontro</p>}
     </div>
   );
 };
