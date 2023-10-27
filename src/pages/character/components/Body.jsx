@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import Card from "./Card";
 import { useCharacters } from "../../../hooks/useCharacters";
+import { FilterContext } from "../../../context/filterContext";
 
 const Body = () => {
-  const { data, isLoading, isError } = useCharacters({});
-
+  const { initialState } = useContext(FilterContext);
+  const { data, isLoading, isError } = useCharacters(initialState);
   return (
     <div className="w-full grid grid-cols-4 gap-10">
       {!isLoading &&
