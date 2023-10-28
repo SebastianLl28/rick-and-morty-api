@@ -1,6 +1,7 @@
 import Gender from "./Gender";
 import Species from "./Species";
 import Status from "./Status";
+import Type from "./Type";
 
 const Filter = () => {
   return (
@@ -8,6 +9,7 @@ const Filter = () => {
       <Status />
       <Gender />
       <Species />
+      <Type />
     </div>
   );
 };
