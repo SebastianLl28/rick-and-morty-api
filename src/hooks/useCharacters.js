@@ -14,3 +14,18 @@ const getCharacters = async (_ctx) => {
 };
 
 export const useCharacters = (filter) => useQuery(['characters', filter], getCharacters)
+
+const getCharacterById = async (_ctx) => {
+  try {
+    const [ , id ] = _ctx.queryKey
+    const { data } = await base.get(`/${id}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export const useCharacterById = (id) => useQuery(['character', id], getCharacterById, {
+  refetchOnWindowFocus: false,
+  enabled: !!id
+})

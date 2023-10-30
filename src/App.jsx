@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import HomePage from "./pages/home/HomePage";
 import CharacterPage from "./pages/character/CharacterPage";
 import UseFilter from "./context/filterContext";
+import Character from "./pages/character-id/Character";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/characters" element={<CharacterPage />} />
+            <Route path="/characters/:id" element={<Character />} />
           </Routes>
         </BrowserRouter>
       </UseFilter>

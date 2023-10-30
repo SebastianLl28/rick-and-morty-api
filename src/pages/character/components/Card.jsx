@@ -1,13 +1,28 @@
 import React from "react";
+import { flushSync } from "react-dom";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ id, name, status, image, especies }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (!document.startViewTransition) {
+      navigate(`/characters/${id}`);
+      return;
+    }
+    document.startViewTransition(() =>
+      flushSync(() => navigate(`/characters/${id}`))
+    );
+  };
+
   return (
-    <div className="rounded overflow-hidden">
+    <div className="rounded overflow-hidden" onClick={handleClick}>
       <div className="relative">
         <img
           src={image}
           alt={`image ${name}`}
           className="object-cover w-full h-72"
+          style={{ viewTransitionName: `card-${id}` }}
         />
         <Status status={status} />
       </div>
