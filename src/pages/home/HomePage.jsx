@@ -1,8 +1,11 @@
+import { Hero, Character } from "./components/index";
+
 const HomePage = () => {
   return (
-    <div>
-      <p>asdas</p>
-    </div>
+    <main className="space-y-8 pb-10">
+      <Hero />
+      <Character />
+    </main>
   );
 };
 
