@@ -26,6 +26,7 @@ const Species = () => {
         className="w-full px-3 py-2 rounded text-gray-900"
         placeholder="Ejm: Human, Animal, Alien..."
         onChange={handleOnchange}
+        value={text}
       />
     </div>
   );

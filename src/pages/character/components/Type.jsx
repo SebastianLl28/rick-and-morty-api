@@ -26,6 +26,7 @@ const Type = () => {
         className="w-full px-3 py-2 rounded text-gray-900"
         placeholder="Ejm: Planet, Experiment, Antennae"
         onChange={handleOnchange}
+        value={text}
       />
     </div>
   );

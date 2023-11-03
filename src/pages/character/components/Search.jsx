@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { FilterContext } from "../../../context/filterContext";
 
 const Search = () => {
@@ -27,6 +26,7 @@ const Search = () => {
         className="w-full px-3 py-2 rounded text-gray-900"
         placeholder="Search your character favorite"
         onChange={handleOnChange}
+        value={text}
       />
     </div>
   );
