@@ -6,7 +6,7 @@ const Status = () => {
   const { initialState, setInitialState } = useContext(FilterContext);
 
   const handleOptionChange = (e) => {
-    setInitialState({ ...initialState, status: e.target.value });
+    setInitialState({ ...initialState, status: e.target.value, page: 1 });
   };
 
   return (

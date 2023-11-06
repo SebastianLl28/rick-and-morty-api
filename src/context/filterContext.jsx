@@ -12,6 +12,7 @@ const UseFilter = ({ children }) => {
     species: "",
     type: "",
     gender: "",
+    page: 1,
   });
 
   return (

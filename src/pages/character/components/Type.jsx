@@ -11,7 +11,7 @@ const Type = () => {
 
   useEffect(() => {
     const timeoutId = setTimeout(
-      () => setInitialState({ ...initialState, type: text }),
+      () => setInitialState({ ...initialState, type: text, page: 1 }),
       1200
     );
     return () => clearTimeout(timeoutId);

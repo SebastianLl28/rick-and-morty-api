@@ -11,7 +11,7 @@ const Species = () => {
 
   useEffect(() => {
     const timeoutId = setTimeout(
-      () => setInitialState({ ...initialState, species: text }),
+      () => setInitialState({ ...initialState, species: text, page: 1 }),
       1200
     );
     return () => clearTimeout(timeoutId);

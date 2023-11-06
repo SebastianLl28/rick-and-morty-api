@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Card from "./Card";
 import { useCharacters } from "../../../hooks/useCharacters";
 import { FilterContext } from "../../../context/filterContext";
-import { useEffect } from "react";
+import Pagination from "./Pagination";
 
 const Body = () => {
   const { initialState } = useContext(FilterContext);
@@ -12,20 +12,17 @@ const Body = () => {
     refetch();
   }, [initialState]);
   return (
-    <div className="w-full grid grid-cols-2 gap-10 md:grid-cols-3 2xl:grid-cols-4">
-      {!isLoading &&
-        !isError &&
-        data &&
-        data.results.map((element) => (
-          <Card
-            id={element.id}
-            image={element.image}
-            name={element.name}
-            key={element.id}
-            status={element.status}
-            especies={element.species}
-          />
-        ))}
+    <div className="w-full">
+      {!isLoading && !isError && data && (
+        <div className="w-full space-y-5">
+          <Pagination info={data.info} />
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-3 2xl:grid-cols-4">
+            {data.results.map((element) => (
+              <Card key={element.id} character={element} />
+            ))}
+          </div>
+        </div>
+      )}
       {isLoading && isFetching && <p>Esta cargando</p>}
       {!isLoading && isError && <p>No se encontro</p>}
     </div>

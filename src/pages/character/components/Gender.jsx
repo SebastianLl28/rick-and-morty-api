@@ -6,7 +6,7 @@ const Gender = () => {
   const { initialState, setInitialState } = useContext(FilterContext);
 
   const handleOptionChange = (e) => {
-    setInitialState({ ...initialState, gender: e.target.value });
+    setInitialState({ ...initialState, gender: e.target.value, page: 1 });
   };
 
   return (

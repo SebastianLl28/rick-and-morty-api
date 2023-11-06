@@ -2,7 +2,7 @@ import React from "react";
 import { flushSync } from "react-dom";
 import { useNavigate } from "react-router-dom";
 
-const Card = ({ id, name, status, image, especies }) => {
+const Card = ({ character: { id, name, status, image, especies } }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {

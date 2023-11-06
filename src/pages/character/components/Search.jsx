@@ -10,10 +10,9 @@ const Search = () => {
   };
 
   useEffect(() => {
-    const timeoutId = setTimeout(
-      () => setInitialState({ ...initialState, name: text }),
-      1200
-    );
+    const timeoutId = setTimeout(() => {
+      setInitialState({ ...initialState, name: text, page: 1 });
+    }, 1200);
     return () => clearTimeout(timeoutId);
   }, [text]);
 
