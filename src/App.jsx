@@ -6,6 +6,7 @@ import HomePage from "./pages/home/HomePage";
 import CharacterPage from "./pages/character/CharacterPage";
 import UseFilter from "./context/filterContext";
 import Character from "./pages/character-id/Character";
+import NotFound from "./pages/404/NotFound";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/characters" element={<CharacterPage />} />
             <Route path="/characters/:id" element={<Character />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       </UseFilter>
