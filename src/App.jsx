@@ -12,7 +12,7 @@ import LocationProvider from "./context/locationContext";
 
 const App = () => {
   return (
-    <main className="min-h-screen bg-gray-200 text-black dark:bg-gray-950 dark:text-white">
+    <main className="min-h-screen bg-gray-950 text-white">
       <UseFilter>
         <LocationProvider>
           <BrowserRouter>

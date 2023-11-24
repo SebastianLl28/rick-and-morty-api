@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import Toggle from "./Toggle";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -16,7 +15,7 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full dark:bg-gray-900 z-10  ${
+      className={`w-full bg-gray-900 z-10  ${
         isActive ? "h-screen fixed top-0" : "relative"
       }`}
     >
@@ -40,7 +39,7 @@ const Header = () => {
           } lg:block lg:order-none`}
         >
           <ul
-            className={`flex [&>li>a]:text-white items-center  ${
+            className={`flex items-center ${
               isActive
                 ? "flex-col content-center h-full justify-center space-y-9 text-2xl font-bold"
                 : "space-x-6"
@@ -50,7 +49,7 @@ const Header = () => {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "!text-[#00b5cc]" : "text-white"
+                  isActive ? "text-[#00b5cc]" : "text-white"
                 }
               >
                 Home
@@ -60,7 +59,7 @@ const Header = () => {
               <NavLink
                 to="/characters"
                 className={({ isActive }) =>
-                  isActive ? "!text-[#00b5cc]" : "text-white"
+                  isActive ? "text-[#00b5cc]" : "text-white"
                 }
               >
                 characters
@@ -70,7 +69,7 @@ const Header = () => {
               <NavLink
                 to="/locations"
                 className={({ isActive }) =>
-                  isActive ? "!text-[#00b5cc]" : "text-white"
+                  isActive ? "text-[#00b5cc]" : "text-white"
                 }
               >
                 locations
@@ -80,7 +79,7 @@ const Header = () => {
               <NavLink
                 to="/episodes"
                 className={({ isActive }) =>
-                  isActive ? "!text-[#00b5cc]" : "text-white"
+                  isActive ? "text-[#00b5cc]" : "text-white"
                 }
               >
                 episodes
@@ -88,9 +87,6 @@ const Header = () => {
             </li>
           </ul>
         </nav>
-        <div className="lg:flex-grow lg:basis-0 flex justify-end">
-          <Toggle />
-        </div>
         <button
           className="block lg:hidden cursor-pointer"
           onClick={() => setIsActive(!isActive)}
