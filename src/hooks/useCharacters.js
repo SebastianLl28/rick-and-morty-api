@@ -14,7 +14,9 @@ const getCharacters = async (_ctx) => {
 };
 
 export const useCharacters = (filter) =>
-  useQuery(["characters", filter], getCharacters);
+  useQuery(["characters", filter], getCharacters, {
+    refetchOnWindowFocus: false,
+  });
 
 const getCharacterById = async (_ctx) => {
   try {

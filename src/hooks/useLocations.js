@@ -15,4 +15,6 @@ const getLocations = async (_ctx) => {
 };
 
 export const useLocations = (filter) =>
-  useQuery(["locations", filter], getLocations);
+  useQuery(["locations", filter], getLocations, {
+    refetchOnWindowFocus: false,
+  });
