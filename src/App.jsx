@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./shared/Header";
 import HomePage from "./pages/home/HomePage";
 import CharacterPage from "./pages/character/CharacterPage";
 import UseFilter from "./context/filterContext";
