@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { links } from "./data/links";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -45,46 +46,18 @@ const Header = () => {
                 : "space-x-6"
             }`}
           >
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) =>
-                  isActive ? "text-[#00b5cc]" : "text-white"
-                }
-              >
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/characters"
-                className={({ isActive }) =>
-                  isActive ? "text-[#00b5cc]" : "text-white"
-                }
-              >
-                characters
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/locations"
-                className={({ isActive }) =>
-                  isActive ? "text-[#00b5cc]" : "text-white"
-                }
-              >
-                locations
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/episodes"
-                className={({ isActive }) =>
-                  isActive ? "text-[#00b5cc]" : "text-white"
-                }
-              >
-                episodes
-              </NavLink>
-            </li>
+            {links.map((link) => (
+              <li key={link.name}>
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    isActive ? "text-[#00b5cc]" : "text-white"
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
         <button
