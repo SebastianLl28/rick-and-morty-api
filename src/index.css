@@ -56,3 +56,16 @@
     @apply bg-stone-700;
   }
 }
+
+.skeleton {
+  animation: animate-skeleton 1s infinite alternate;
+}
+
+@keyframes animate-skeleton {
+  0% {
+    @apply bg-slate-400;
+  }
+  100% {
+    @apply bg-slate-600;
+  }
+}

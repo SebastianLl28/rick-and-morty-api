@@ -1,6 +1,4 @@
-import Search from "./components/Search";
-import Filter from "./components/Filter";
-import Body from "./components/Body";
+import { Body, Search, Filter } from "./sections";
 
 const CharacterPage = () => {
   return (

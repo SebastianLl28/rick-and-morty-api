@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import base from "../api/characterAPI";
+import { useContext } from "react";
+import { FilterContext } from "../context/filterContext";
 
 const getCharacters = async (_ctx) => {
   try {
@@ -13,10 +15,13 @@ const getCharacters = async (_ctx) => {
   }
 };
 
-export const useCharacters = (filter) =>
-  useQuery(["characters", filter], getCharacters, {
+export const useCharacters = () => {
+  const { initialState } = useContext(FilterContext);
+
+  return useQuery(["characters", initialState], getCharacters, {
     refetchOnWindowFocus: false,
   });
+};
 
 const getCharacterById = async (_ctx) => {
   try {

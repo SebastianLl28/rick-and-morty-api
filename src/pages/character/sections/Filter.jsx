@@ -1,7 +1,7 @@
-import Gender from "./Gender";
-import Species from "./Species";
-import Status from "./Status";
-import Type from "./Type";
+import Gender from "../components/Gender";
+import Species from "../components/Species";
+import Status from "../components/Status";
+import Type from "../components/Type";
 
 const Filter = () => {
   return (
